@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atendimento Chatbot Tapera</title>
+    <link rel="stylesheet" href="BotAtendimento.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="chat-container">
+        <header class="chat-header">
+            <h1>Chatbot Tapera</h1>
+            <p>Olá! Em que posso ajudar?</p>
+        </header>
+
+        <div class="chat-messages" id="chat-messages">
+            <div class="message bot-message">
+                <p>Seja bem-vindo(a) ao Tapera! Sou seu assistente virtual. Por favor, **clique no item abaixo** que você deseja pedir para ser redirecionado ao WhatsApp e finalizar seu pedido:</p>
+            </div>
+            
+            <div class="menu-options" id="menu-options">
+                <h2>HAMBÚRGUER 100% ARTESANAL</h2>
+                <button class="menu-item" data-item="Hambúrguer Artesanal (R$20)">
+                    Hambúrguer Artesanal De Carne <span class="price">R$20</span>
+                </button>
+                <p class="description">Pão de hambúrguer feito de forma artesanal, bife de carne, mussarela, alface, cebola, tomate, pepino e maionese verde</p>
+                <button class="menu-item" data-item="Hambúrguer Artesanal (R$22)">
+                    Hambúrguer Artesanal De Frango <span class="price">R$22</span>
+                </button>
+                <p class="description">Pão de hambúrguer feito de forma artesanal, bife de Frango Empanado, mussarela, alface, cebola, tomate, pepino e maionese verde</p>
+
+                <h2>ACOMPANHAMENTOS</h2>
+                <button class="menu-item" data-item="Batata P (R$8)">Batata P. <span class="price">R$8</span></button>
+                <button class="menu-item" data-item="Batata M (R$10)">Batata M. <span class="price">R$10</span></button>
+                <button class="menu-item" data-item="Batata G (R$15)">Batata G. <span class="price">R$15</span></button>
+
+                <h2>PASTÉIS DOCES</h2>
+                <button class="menu-item" data-item="Pastel Chocolate ao Leite (R$15)">Pastel Chocolate ao Leite <span class="price">R$15</span></button>
+                <button class="menu-item" data-item="Pastel Romeu e Julieta (R$14)">Pastel Romeu e Julieta <span class="price">R$14</span></button>
+                <button class="menu-item" data-item="Pastel Creme Ninho (R$15)">Pastel Creme Ninho <span class="price">R$15</span></button>
+                <button class="menu-item" data-item="Pastel Stikadinho (R$17)">Pastel Stikadinho <span class="price">R$17</span></button>
+                <button class="menu-item" data-item="Pastel de Ouro Branco (R$15)">Pastel de Ouro Branco <span class="price">R$15</span></button>
+
+                <h2>PASTÉIS SALGADOS</h2>
+                <button class="menu-item" data-item="Pastel de Carne (R$12)">Pastel de Carne <span class="price">R$12</span></button>
+                <button class="menu-item" data-item="Pastel de Frango c/ Catupiry (R$12)">Pastel de Frango c/ Catupiry <span class="price">R$12</span></button>
+                <button class="menu-item" data-item="Pastel de Calabresa (R$12)">Pastel de Calabresa <span class="price">R$12</span></button>
+                <button class="menu-item" data-item="Pastel de Queijo c/ Orégano (R$12)">Pastel de Queijo c/ Orégano <span class="price">R$12</span></button>
+                <button class="menu-item" data-item="Pastel de Queijo (R$12)">Pastel de Queijo <span class="price">R$12</span></button>
+
+                <h2>SUCOS NATURRAIS</h2>
+                <button class="menu-item" data-item="Suco de Laranja (R$6)">Suco de Laranja <span class="price">R$6</span></button>
+                <button class="menu-item" data-item="Suco de Limão (R$6)">Suco de Limão <span class="price">R$6</span></button>
+                <button class="menu-item" data-item="Suco de Manga (R$8)">Suco de Manga <span class="price">R$8</span></button>
+                <button class="menu-item" data-item="Suco de Maracujá (R$8)">Suco de Maracujá <span class="price">R$8</span></button>
+                <button class="menu-item" data-item="Suco de Abacaxi (R$8)">Suco de Abacaxi <span class="price">R$8</span></button>
+
+                <h2>BEBIDAS</h2>
+                <button class="menu-item" data-item="Refrigerante 350ml (R$7)">Refrigerante 350ml <span class="price">R$7</span></button>
+                <button class="menu-item" data-item="Refrigerante Lata (R$6)">Refrigerante Lata <span class="price">R$6</span></button>
+                <button class="menu-item" data-item="Água c/ Gás (R$3.50)">Água c/ Gás <span class="price">R$3.50</span></button>
+                <button class="menu-item" data-item="Água s/ Gás (R$3.00)">Água s/ Gás <span class="price">R$3.00</span></button>
+            </div>
+            </div>
+
+        <div class="chat-input" id="redirect-message">
+            <p>Escolha um item acima para iniciar seu pedido no WhatsApp.</p>
+        </div>
+    </div>
+
+    <script>
+        const phoneNumber = '555196270518'; // Número de telefone para o link do WhatsApp
+        const menuItems = document.querySelectorAll('.menu-item');
+
+        menuItems.forEach(button => {
+            button.addEventListener('click', function() {
+                const item = this.getAttribute('data-item');
+                const encodedMessage = encodeURIComponent(`Olá, Vim pelo Chatbot Tapera! Gostaria de pedir o seguinte item: ${item}.`);
+                const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
+                
+                // Abre o link do WhatsApp em uma nova aba
+                window.open(whatsappUrl, '_blank');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <left><title>Casa Tapera</title></left>
+    <link rel="stylesheet" href="Projeto_Tapera.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body>
+    <left><header class="header">
+        </left><div class="logo-container">
+            <img src="/logo_Tapera.jpeg" alt="Logotipo Casa Tapera" class="logo-image">
+            </div></left>
+        <nav class="navigation">
+            <button id="chatbot-btn" class="nav-button">Atendimento</button>
+        </nav>
+    </header>
+    <main class="main-content">
+        <section class="menu-section">
+            <h2 class="section-title">CARDÁPIO</h2>
+            <div class="menu-grid">
+                <div class="menu-column has-image">
+                    <img src="/Imagem_hamburguer.jpeg" alt="Hambúrguer 100% Artesanal" class="menu-image" style="height: 402px; width: 340px;" >
+                    
+                    <br>
+                    <h3 class="subsection-title">HAMBÚRGUER 100% ARTESANAL</h3>
+                    <ul class="menu-list">
+                    <br>
+                    <br>
+                    
+                        <li>PÃO DE HAMBÚRGUER FEITO DE FORMA ARTESANAL, BIFE DE CARNE, MUSSARELA, ALFACE, CEBOLA, TOMATE, PEPINO E MAIONESE VERDE <span class="price">R$20</span></li>
+                    </ul>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <h3 class="subsection-title">ACOMPANHAMENTOS</h3>
+                    <br>
+                    <br>
+                    <div class="acomp-bebidas">
+                        <ul class="menu-list">
+                            <li>BATATA P. <span class="price">R$8</span></li>
+                            <li>BATATA M. <span class="price">R$10</span></li>
+                            <li>BATATA G. <span class="price">R$15</span></li>
+                        </ul>
+                    </div>
+                </div>                   
+                <div class="acomp-bebidas">
+                <div class="menu-column">
+                    <img src="/Imagem_Pastéis.png.jpeg" alt="Pastel de 15cm feitos na hora" class="menu-image" style="height: 402px; width: 340px" > 
+                    <div class="acomp-bebidas">
+                        <h3 class="subsection-title">PASTÉIS DOCES</h3>
+                        <ul class="menu-list">
+                            <li>PASTEL CHOCOLATE AO LEITE <span class="price">R$15</span></li>
+                            <li>PASTEL ROMEU E JULIETA <span class="price">R$14</span></li>
+                            <li>PASTEL CREME NINHO <span class="price">R$15</span></li>
+                            <li>PASTEL STIKADINHO <span class="price">R$17</span></li>
+                            <li>PASTEL DE OURO BRANCO <span class="price">R$15</span></li>
+                            <br>
+                            <br>
+                            <br>
+                        </ul>
+                        <h3 class="subsection-title">PASTÉIS SALGADOS</h3>
+                        <ul class="menu-list">
+                            <li>PASTEL DE CARNE <span class="price">R$12</span></li>
+                            <li>PASTEL DE FRANGO C/ CATUPIRY <span class="price">R$12</span></li>
+                            <li>PASTEL DE CALABRESA <span class="price">R$12</span></li>
+                            <li>PASTEL DE QUEIJO C/ ORÉGANO <span class="price">R$12</span></li>
+                            <li>PASTEL DE QUEIJO <span class="price">R$12</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-column">
+                <div class="acomp-bebidas">
+                    <img src="/Imagem_SucosNaturais.png.jpeg" alt="SUCÃO NATURAL FEITO NA HORA" class="menu-image" style="height: 402px; width: 340px" > 
+                    <h3 class="subsection-title">SUCOS NATURRAIS</h3>
+                    <ul class="menu-list">
+                        <li>SUCO DE LARANJA <span class="price">R$6</span></li>
+                        <li>SUCO DE LIMÃO <span class="price">R$6</span></li>
+                        <li>SUCO DE MANGA <span class="price">R$6</span></li>
+                        <li>SUCO DE MARACUJÁ <span class="price">R$8</span></li>
+                        <li>SUCO DE ABACAXI <span class="price">R$8</span></li>
+                    </ul>
+                </div>
+                        <br>
+                        <br>
+                        <br>
+                <div class="acomp-bebidas">
+                    <h3 class="subsection-title">BEBIDAS</h3>
+                    <ul class="menu-list">
+                        <li>REFRIGERANTE 350ML <span class="price">R$7</span></li>
+                        <li>REFRIGERANTE LATA <span class="price">R$6</span></li>
+                        <li>ÁGUA C/ GÁS <span class="price">R$3.50</span></li>
+                        <li>ÁGUA S/ GÁS <span class="price">R$3</span></li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        <section id="pedidos-manager">
+            <h2 class="section-title">PEDIDOS EM ANDAMENTO</h2>
+            <div class="pedidos-container">
+                <div class="pedido-form">
+                    <h3>Área de pedidos</h3>
+                    <label for="item-pedido">Item:</label>
+                    <input type="text" id="item-pedido" placeholder="Digite seu nome: ">
+                    <button onclick="adicionarPedido()">Adicionar Pedido</button>
+                </div>
+                <div class="pedidos-list">
+                    <h3>Fila de Pedidos</h3>
+                    <ul id="lista-pedidos"></ul>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <p>DELIVERY (51) 99627-0518</p>
+        <p>RUA JORGE PEREIRA NUNES, 2411 - ABERTA DOS MORROS</p>
+    </footer>
+    <script src="Projeto_Tapera.js"></script>
+</body>
+</html>

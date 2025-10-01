@@ -1,0 +1,319 @@
+:root {
+    --color-black: #000000;
+    --color-orange: #f06400;
+    --color-white: #ffffff;
+    --color-yellow: #ffc600;
+    --color-dark-gray: #1a1a1a;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--color-black);
+    padding: 20px;
+    font-family: 'Bebas Neue', sans-serif;
+    color: var(--color-white);
+}
+
+/* Header */
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+    border-bottom: 2px solid var(--color-orange);
+}
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo-image {
+    width: 600px;
+    height: auto;
+}
+
+.navigation .nav-button {
+    background-color: var(--color-orange);
+    border: none;
+    padding: 10px 30px;
+    font-size: 1.5em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+}
+
+.navigation .nav-button:hover {
+    background-color: #d15800;
+}
+
+/* Main Content */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 3em;
+    color: var(--color-orange);
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 5px;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.menu-column {
+    background-color: var(--color-dark-gray);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.menu-column.has-image {
+    padding-top: 20;
+}
+
+.menu-image {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.menu-column h3 {
+    font-size: 2em;
+    color: var(--color-yellow);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.subsection-title {
+    font-size: 1.8em;
+    color: var(--color-orange);
+    margin-top: 20px;
+    border-bottom: 2px solid var(--color-orange);
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.menu-list {
+    list-style: none;
+    text-align: left;
+}
+
+.menu-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #333;
+}
+
+.menu-list li:last-child {
+    border-bottom: none;
+}
+
+.price {
+    font-weight: bold;
+    color: var(--color-orange);
+}
+
+/* Gerenciamento de Pedidos */
+#pedidos-manager {
+    margin-top: 50px;
+}
+
+.pedidos-container {
+    display: flex;
+    gap: 40px;
+}
+
+.pedido-form, .pedidos-list {
+    flex: 1;
+    background-color: var(--color-dark-gray);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.pedido-form h3,
+.pedidos-list h3 {
+    font-size: 1.5em;
+    color: var(--color-orange);
+    margin-bottom: 10px;
+}
+
+.pedido-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.pedido-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #333;
+    border: 1px solid #555;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.pedido-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--color-orange);
+    border: none;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.pedidos-list ul {
+    list-style: none;
+}
+
+.pedidos-list li {
+    padding: 15px;
+    border-bottom: 1px solid #333;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: background-color 0.5s ease;
+}
+
+.pedido-item {
+    font-size: 1.5em;
+    color: var(--color-white);
+    margin-bottom: 5px;
+}
+
+.pedido-tempo {
+    font-size: 1em;
+    color: var(--color-yellow);
+}
+
+.pedido-list li:last-child {
+    border-bottom: none;
+}
+
+/* Chatbot */
+.hidden {
+    display: none;
+}
+
+#chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 350px;
+    height: 450px;
+    background-color: var(--color-dark-gray);
+    border: 1px solid #333;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.chatbot-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--color-orange);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.chatbot-logo {
+    width: 120px; /* Ajuste o tamanho da logo do chatbot */
+    height: auto;
+}
+
+#close-chatbot {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    color: var(--color-white);
+    cursor: pointer;
+}
+
+#chatbot-messages {
+    flex-grow: 1;
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.message {
+    padding: 8px 12px;
+    border-radius: 15px;
+    max-width: 80%;
+}
+
+.user-message {
+    background-color: #007bff;
+    align-self: flex-end;
+}
+
+.bot-message {
+    background-color: #555;
+    align-self: flex-start;
+}
+
+#user-input {
+    width: calc(100% - 70px);
+    padding: 10px;
+    background-color: #333;
+    border: none;
+    border-top: 1px solid #555;
+    color: var(--color-white);
+    margin-left: 5px;
+}
+
+#send-btn {
+    width: 60px;
+    background-color: var(--color-orange);
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
+    color: var(--color-white);
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    border-top: 2px solid var(--color-orange);
+    color: var(--color-white);
+    font-size: 1.2em;
+}
+
+.footer p {
+    margin: 5px 0;
+}
+
+/* No seu arquivo Projeto_Tapera.css */
+.hidden {
+    display: none;
+}
